@@ -3,10 +3,10 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { CardMedia, Fade, Skeleton } from '@mui/material';
+import { CardMedia, Skeleton } from '@mui/material';
 import { HandleVote } from '../Services/HandleVoteService';
 import { useEffect, useState } from 'react';
-import { TransitionGroup } from 'react-transition-group';
+import { Box } from '@mui/system';
 
 export default function CardComponent({ id, title, votos, logo }) {
     const [loading, setLoading] = useState(true);
@@ -14,29 +14,53 @@ export default function CardComponent({ id, title, votos, logo }) {
     useEffect(() => {
         setTimeout(() => {
             setLoading(false);
-        }, 1500);
+        }, 1800);
     })
 
     return (
         <Card style={{
             backgroundColor: "#fff",
+            boxShadow: "0px 0px 5px 0px rgba(0,0,0,0.2)",
         }}>
             {loading ? (
                 <>
                     <Skeleton variant="rectangule" style={{
                         height: 0,
-                        paddingTop: '56.25%',
+                        paddingTop: '56.25%'
                     }} />
                     <Skeleton variant="text" height={50} style={{
                         marginLeft: 'auto',
                         marginRight: 'auto',
-                        width: '65%',
+                        marginTop: '0.6rem',
+                        marginBottom: "auto",
+                        width: '85%',
                     }} />
-                    <Skeleton variant="text" height={80} style={{
+                    <Skeleton variant="text" height={15} style={{
                         marginLeft: 'auto',
                         marginRight: 'auto',
-                        width: '95%',
+                        width: '85%',
                     }} />
+                    <Skeleton variant="text" height={15} style={{
+                        marginLeft: 'auto',
+                        marginRight: 'auto',
+                        width: '85%',
+                    }} />
+                    <Box display="flex" mb={0}>
+                        <Skeleton variant="text" height={70} style={{
+                            marginLeft: "1rem",
+                            marginRight: "auto",
+                            marginBottom: "0.1rem",
+                            marginTop: "auto",
+                            width: "45%",
+                        }} />
+                        <Skeleton variant="text" height={70} style={{
+                            marginLeft: 'auto',
+                            marginRight: '1rem',
+                            marginBottom: "0.1rem",
+                            marginTop: "auto",
+                            width: '20%',
+                        }} />
+                    </Box>
                 </>
             ) : (
                 <>
@@ -57,7 +81,7 @@ export default function CardComponent({ id, title, votos, logo }) {
                         <Typography variant="body2" component="p" style={{
                             marginTop: "1rem",
                         }}>
-                            Tu mama
+                            esto es un texto de prueba
                         </Typography>
                     </CardContent>
                     <CardActions>

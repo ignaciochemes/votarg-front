@@ -30,7 +30,7 @@ export const InfoCardsComponent = () => {
         }}>
             <Grid item xs={12} sm={6} md={4}>
                 <Card style={{
-                    backgroundColor: "#f5f5f5",
+                    backgroundColor: "#fff",
                 }}>
                     <Fade in={true}>
                         <CardContent>
@@ -66,7 +66,7 @@ export const InfoCardsComponent = () => {
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
                 <Card style={{
-                    backgroundColor: "#f5f5f5",
+                    backgroundColor: "#fff",
                 }}>
                     <Fade in={true}>
                         <CardContent>

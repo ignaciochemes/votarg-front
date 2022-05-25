@@ -18,7 +18,6 @@ export default function AvisoLegalCard() {
                     <CardContent>
                         <Typography variant="h5" component="h2" style={{
                             fontWeight: "bold",
-                            fontFamily: "monospace",
                             fontSize: "1.5rem",
                             color: "#000",
                             textAlign: "center",
@@ -57,14 +56,13 @@ export default function AvisoLegalCard() {
                         <Button
                             variant='contained'
                             size="small"
-                            href='https://github.com/siegmund0/votarg'
+                            href='https://github.com/siegmund0/votarg-front'
                             target="_blank"
                             rel="noopener noreferrer"
                             sx={{
                                 backgroundColor: "#f5f5f5",
                                 color: "#000",
                                 fontSize: "0.9rem",
-                                fontFamily: "monospace",
                                 fontWeight: "bold",
                                 textTransform: "none",
                                 borderRadius: "0.2",
@@ -76,7 +74,29 @@ export default function AvisoLegalCard() {
                                 mx: "auto",
                                 mb: "auto",
                             }}
-                        >Ver codigo fuente en GitHub</Button>
+                        >Frontend Votarg - GitHub</Button>
+                        <Button
+                            variant='contained'
+                            size="small"
+                            href='https://github.com/siegmund0/votarg-backend'
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            sx={{
+                                backgroundColor: "#f5f5f5",
+                                color: "#000",
+                                fontSize: "0.9rem",
+                                fontWeight: "bold",
+                                textTransform: "none",
+                                borderRadius: "0.2",
+                                border: "1px solid #000",
+                                "&:hover": {
+                                    backgroundColor: "#000",
+                                    color: "#f5f5f5",
+                                },
+                                mx: "auto",
+                                mb: "auto",
+                            }}
+                        >Backend Votarg - GitHub</Button>
                     </CardActions>
                     <CardContent>
                         <Typography sx={{ fontSize: 16 }} color="text.secondary" gutterBottom>
@@ -93,7 +113,6 @@ export default function AvisoLegalCard() {
                                 backgroundColor: "#000",
                                 color: "#f5f5f5",
                                 fontSize: "0.9rem",
-                                fontFamily: "monospace",
                                 fontWeight: "bold",
                                 textTransform: "none",
                                 borderRadius: "0.2",
@@ -122,7 +141,6 @@ export default function AvisoLegalCard() {
                                 backgroundColor: "#f5f5f5",
                                 color: "#000",
                                 fontSize: "0.9rem",
-                                fontFamily: "monospace",
                                 fontWeight: "bold",
                                 textTransform: "none",
                                 borderRadius: "0.2",
