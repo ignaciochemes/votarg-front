@@ -2,12 +2,10 @@ import { toast } from 'react-toastify';
 import { CardHandleVoteWebService, GetIpWebService } from "../WebService/CardWebService";
 
 export const HandleVote = async (id) => {
-    const ip = await GetIpWebService();
-    console.log(id, ip);
     let toastLoading;
     try {
         toastLoading = toast.loading('Votando...')
-        await CardHandleVoteWebService(id, ip);
+        await CardHandleVoteWebService(id);
         setTimeout(() => {
             return toast.update(toastLoading, {
                 type: "success",
