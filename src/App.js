@@ -7,7 +7,7 @@ function App() {
     return (
         <div style={{
             backgroundColor: "#e7e7e7",
-            height: "100vh",
+            height: "100wh",
         }}>
             <ThemeProvider theme={theme}>
                 <NavbarComponent />

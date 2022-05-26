@@ -130,6 +130,8 @@ export default function AvisoLegalCard() {
             ) : (
                 <Card sx={{ minWidth: 275 }} style={{
                     marginTop: "1rem",
+                    marginLeft: "1rem",
+                    marginRight: "1rem",
                     backgroundColor: "#f5f5f5",
                 }}>
                     <CardActions>

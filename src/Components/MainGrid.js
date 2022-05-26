@@ -16,7 +16,6 @@ export default function MainGrid() {
         const response = await CardWebService();
         const shuffledCards = response.result.sort(() => 0.5 - Math.random());
         setCards(shuffledCards);
-
     }
 
     useEffect(() => {
@@ -38,7 +37,7 @@ export default function MainGrid() {
             }}>
                 {cards.map(card => (
                     <Grow in={true} timeout={500}>
-                        <Grid item xs={12} sm={6} md={4} key={card.id}>
+                        <Grid item xs={12} sm={6} md={3} key={card.id}>
                             <CardComponent
                                 id={card.id}
                                 title={card.name}

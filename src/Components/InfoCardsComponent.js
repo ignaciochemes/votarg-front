@@ -26,11 +26,15 @@ export const InfoCardsComponent = () => {
     return (
         <Grid container spacing={3} style={{
             marginTop: "1rem",
+            paddingRight: "1rem",
+            paddingLeft: "1rem",
             justifyContent: "center",
         }}>
-            <Grid item xs={12} sm={6} md={4}>
+            <Grid item xs={12} sm={8} md={6}>
                 <Card style={{
                     backgroundColor: "#fff",
+                    borderRadius: "0.3rem",
+                    boxShadow: "0px 0px 5px 0px rgba(0,0,0,0.2)",
                 }}>
                     <Fade in={true}>
                         <CardContent>
@@ -64,9 +68,11 @@ export const InfoCardsComponent = () => {
                     </Fade>
                 </Card>
             </Grid>
-            <Grid item xs={12} sm={6} md={4}>
+            <Grid item xs={12} sm={8} md={6}>
                 <Card style={{
                     backgroundColor: "#fff",
+                    borderRadius: "0.3rem",
+                    boxShadow: "0px 0px 5px 0px rgba(0,0,0,0.2)",
                 }}>
                     <Fade in={true}>
                         <CardContent>
