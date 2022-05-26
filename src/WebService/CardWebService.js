@@ -6,6 +6,7 @@ export const CardWebService = async () => {
 }
 
 export const CardHandleVoteWebService = async (idPartido) => {
-    const response = await axios.post(`${process.env.REACT_APP_BACKEND_URI}/partidos/${idPartido}/votar`);
+    const remoteIp = await axios.get(`${process.env.REACT_APP_CLIENT_IP}`);
+    const response = await axios.post(`${process.env.REACT_APP_BACKEND_URI}/partidos/${idPartido}/votar`, { ip: remoteIp.data.IPv4 });
     return response.data;
 }
