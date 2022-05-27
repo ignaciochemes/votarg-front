@@ -3,6 +3,7 @@ import { Card, CardContent, Fade, Grid, Skeleton, Typography } from "@mui/materi
 import { Box } from "@mui/system"
 import { useEffect, useState } from "react"
 import { InfoCardHandleCountTotalVotes } from "../WebService/InfoCardWebService"
+import ServerStatusComponent from './ServerStatusComponent';
 
 export const InfoCardsComponent = () => {
     const [loading, setLoading] = useState(true);
@@ -45,12 +46,12 @@ export const InfoCardsComponent = () => {
                                 </>
                             ) : (
                                 <>
-                                    <Box display="flex" mb={0}>
+                                    <Box display="flex">
                                         <Fade in={true} timeout={1000}>
                                             <Typography variant="h5" component="h2"
                                                 style={{
                                                     fontSize: "1.4rem",
-                                                    marginTop: "0.5rem",
+                                                    marginTop: "0.55rem",
                                                 }}>
                                                 Votos registrados: {votes}
                                             </Typography>
@@ -70,6 +71,7 @@ export const InfoCardsComponent = () => {
             </Grid>
             <Grid item xs={12} sm={8} md={6}>
                 <Card style={{
+                    height: "100%",
                     backgroundColor: "#fff",
                     borderRadius: "0.3rem",
                     boxShadow: "0px 0px 5px 0px rgba(0,0,0,0.2)",
@@ -87,18 +89,22 @@ export const InfoCardsComponent = () => {
                                         <Fade in={true} timeout={1000}>
                                             <Typography variant="h5" component="h2"
                                                 style={{
-                                                    fontSize: "1.4rem",
-                                                    marginTop: "0.5rem",
+                                                    fontSize: "1rem",
+                                                    fontFamily: "monospace",
+                                                    marginTop: "0.85rem",
                                                 }}>
-                                                Votos registrados: {votes}
+                                                STATUS: BACKEND | API | DB
                                             </Typography>
                                         </Fade>
-                                        <HowToVote style={{
+                                        <div style={{
                                             marginLeft: "auto",
-                                            marginRight: "1rem",
-                                            color: "#00b0ff",
-                                            marginTop: "0.5rem",
-                                        }} />
+                                            marginTop: "0.4rem",
+                                            display: "flex",
+                                        }}>
+                                            <ServerStatusComponent />
+                                            <ServerStatusComponent />
+                                            <ServerStatusComponent />
+                                        </div>
                                     </Box>
                                 </>
                             )}

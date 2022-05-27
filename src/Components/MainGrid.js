@@ -7,6 +7,7 @@ import AvisoLegalCard from "./AvisoLegal";
 import CardComponent from "./CardComponent";
 import { InfoCardsComponent } from "./InfoCardsComponent";
 import { ChartComponent } from "./ChartComponent";
+import { AddblockService } from "../Services/AddblockService";
 
 export default function MainGrid() {
     const [loading, setLoading] = useState(true);
@@ -19,10 +20,12 @@ export default function MainGrid() {
     }
 
     useEffect(() => {
-        fetchCardContent();
-        setTimeout(() => {
+        const loadingFetch = async () => {
+            await AddblockService();
+            await fetchCardContent();
             setLoading(false);
-        }, 1800)
+        }
+        loadingFetch();
     }, []);
 
     return (

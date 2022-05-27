@@ -15,7 +15,7 @@ export default function CardComponent({ id, title, votos, logo }) {
         setTimeout(() => {
             setLoading(false);
         }, 1800);
-    })
+    }, []);
 
     return (
         <Card style={{
