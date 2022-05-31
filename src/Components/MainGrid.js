@@ -1,6 +1,6 @@
 import { CircularProgress, Grid, Grow } from "@mui/material";
 import { useEffect, useState } from "react";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { CardWebService } from "../WebService/CardWebService";
 import AvisoLegalCard from "./AvisoLegal";
@@ -8,6 +8,7 @@ import CardComponent from "./CardComponent";
 import { InfoCardsComponent } from "./InfoCardsComponent";
 import { ChartComponent } from "./ChartComponent";
 import { AddblockService } from "../Services/AddblockService";
+import { RealTimeVoteComponent } from "./RealTimeVoteComponent";
 
 export default function MainGrid() {
     const [loading, setLoading] = useState(true);
@@ -17,14 +18,14 @@ export default function MainGrid() {
         const response = await CardWebService();
         const shuffledCards = response.result.sort(() => 0.5 - Math.random());
         setCards(shuffledCards);
-    }
+    };
 
     useEffect(() => {
         const loadingFetch = async () => {
             await AddblockService();
             await fetchCardContent();
             setLoading(false);
-        }
+        };
         loadingFetch();
     }, []);
 
@@ -32,13 +33,16 @@ export default function MainGrid() {
         <div>
             <AvisoLegalCard />
             <InfoCardsComponent />
-            <Grid container spacing={2} style={{
-                marginTop: "1rem",
-                paddingRight: "1rem",
-                paddingLeft: "1rem",
-
-            }}>
-                {cards.map(card => (
+            <Grid
+                container
+                spacing={2}
+                style={{
+                    marginTop: "1rem",
+                    paddingRight: "1rem",
+                    paddingLeft: "1rem",
+                }}
+            >
+                {cards.map((card) => (
                     <Grow in={true} timeout={500}>
                         <Grid item xs={12} sm={6} md={3} key={card.id}>
                             <CardComponent
@@ -52,27 +56,39 @@ export default function MainGrid() {
                 ))}
             </Grid>
             {loading ? (
-                <Grid container spacing={3} style={{
-                    marginTop: "5rem",
-                    justifyContent: "center",
-                }}>
+                <Grid
+                    container
+                    spacing={3}
+                    style={{
+                        marginTop: "5rem",
+                        justifyContent: "center",
+                    }}
+                >
                     <CircularProgress />
                 </Grid>
             ) : (
-                <Grid container spacing={3} style={{
-                    marginTop: "1rem",
-                    paddingRight: "1rem",
-                    paddingLeft: "1rem",
-                }}>
-                    <Grid item xs={12} sm={5} md={6}>
+                <Grid
+                    container
+                    spacing={3}
+                    style={{
+                        display: "flex",
+                        marginTop: "1rem",
+                        paddingRight: "1rem",
+                        paddingLeft: "1rem",
+                        justifyContent: "center",
+                        alignContent: "center",
+                        alignItems: "center",
+                    }}
+                >
+                    <Grid item xs={12} sm={6} md={5}>
                         <ChartComponent />
                     </Grid>
-                    <Grid item xs={12} sm={5} md={6}>
-                        <ChartComponent />
+                    <Grid item xs={12} sm={6} md={5}>
+                        <RealTimeVoteComponent />
                     </Grid>
                 </Grid>
             )}
             <ToastContainer />
-        </div >
-    )
+        </div>
+    );
 }

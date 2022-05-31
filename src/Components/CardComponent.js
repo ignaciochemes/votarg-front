@@ -1,12 +1,12 @@
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import { CardMedia, Skeleton } from '@mui/material';
-import { HandleVote } from '../Services/HandleVoteService';
-import { useEffect, useState } from 'react';
-import { Box } from '@mui/system';
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import { CardMedia, Skeleton } from "@mui/material";
+import { HandleVote } from "../Services/HandleVoteService";
+import { useEffect, useState } from "react";
+import { Box } from "@mui/system";
 
 export default function CardComponent({ id, title, votos, logo }) {
     const [loading, setLoading] = useState(true);
@@ -18,49 +18,56 @@ export default function CardComponent({ id, title, votos, logo }) {
     }, []);
 
     return (
-        <Card style={{
-            backgroundColor: "#fff",
-            borderRadius: "0.3rem",
-            boxShadow: "0px 0px 5px 0px rgba(0,0,0,0.2)",
-        }}>
+        <Card
+            style={{
+                backgroundColor: "#fff",
+                borderRadius: "0.3rem",
+                boxShadow: "0px 0px 5px 0px rgba(0,0,0,0.2)",
+            }}
+        >
             {loading ? (
                 <>
-                    <Skeleton variant="rectangule" style={{
-                        height: 0,
-                        paddingTop: '56.25%'
-                    }} />
-                    <Skeleton variant="text" height={50} style={{
-                        marginLeft: 'auto',
-                        marginRight: 'auto',
-                        marginTop: '0.6rem',
-                        marginBottom: "auto",
-                        width: '85%',
-                    }} />
-                    <Skeleton variant="text" height={15} style={{
-                        marginLeft: 'auto',
-                        marginRight: 'auto',
-                        width: '85%',
-                    }} />
-                    <Skeleton variant="text" height={15} style={{
-                        marginLeft: 'auto',
-                        marginRight: 'auto',
-                        width: '85%',
-                    }} />
-                    <Box display="flex" mb={0}>
-                        <Skeleton variant="text" height={70} style={{
-                            marginLeft: "1rem",
+                    <Skeleton
+                        variant="rectangule"
+                        style={{
+                            height: 0,
+                            paddingTop: "56.25%",
+                        }}
+                    />
+                    <Skeleton
+                        variant="text"
+                        height={50}
+                        style={{
+                            marginLeft: "auto",
                             marginRight: "auto",
-                            marginBottom: "0.1rem",
-                            marginTop: "auto",
-                            width: "45%",
-                        }} />
-                        <Skeleton variant="text" height={70} style={{
-                            marginLeft: 'auto',
-                            marginRight: '1rem',
-                            marginBottom: "0.1rem",
-                            marginTop: "auto",
-                            width: '20%',
-                        }} />
+                            marginTop: "0.6rem",
+                            marginBottom: "auto",
+                            width: "75%",
+                        }}
+                    />
+                    <Box display="flex" mb={0}>
+                        <Skeleton
+                            variant="text"
+                            height={70}
+                            style={{
+                                marginLeft: "1rem",
+                                marginRight: "auto",
+                                marginBottom: "0.2rem",
+                                marginTop: "auto",
+                                width: "20%",
+                            }}
+                        />
+                        <Skeleton
+                            variant="text"
+                            height={30}
+                            style={{
+                                marginLeft: "auto",
+                                marginRight: "1rem",
+                                marginBottom: "1rem",
+                                marginTop: "auto",
+                                width: "30%",
+                            }}
+                        />
                     </Box>
                 </>
             ) : (
@@ -68,26 +75,25 @@ export default function CardComponent({ id, title, votos, logo }) {
                     <CardMedia
                         style={{
                             height: 0,
-                            paddingTop: '56.25%',
+                            paddingTop: "56.25%",
                         }}
                         image={logo}
                         title={title}
                     />
                     <CardContent>
-                        <Typography variant="h5" component="h2" style={{
-                            textAlign: "center",
-                        }}>
+                        <Typography
+                            variant="h5"
+                            component="h2"
+                            style={{
+                                textAlign: "center",
+                            }}
+                        >
                             {title}
-                        </Typography>
-                        <Typography variant="body2" component="p" style={{
-                            marginTop: "1rem",
-                        }}>
-                            esto es un texto de prueba
                         </Typography>
                     </CardContent>
                     <CardActions>
                         <Button
-                            variant='contained'
+                            variant="contained"
                             size="small"
                             sx={{
                                 backgroundColor: "#000",
@@ -103,11 +109,17 @@ export default function CardComponent({ id, title, votos, logo }) {
                                 },
                             }}
                             onClick={() => HandleVote(id)}
-                        >VOTAR</Button>
-                        <Typography variant="body2" component="p" style={{
-                            marginLeft: "auto",
-                            marginRight: "1rem",
-                        }}>
+                        >
+                            VOTAR
+                        </Button>
+                        <Typography
+                            variant="body2"
+                            component="p"
+                            style={{
+                                marginLeft: "auto",
+                                marginRight: "1rem",
+                            }}
+                        >
                             Votos: {votos}
                         </Typography>
                     </CardActions>
